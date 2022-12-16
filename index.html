@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SUSHI-IZ-XRUSHI</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='lib/raleway/raleway.css' rel='stylesheet' type='text/css'>
+
+    <!-- icons -->
+    <script src="lib/fontawesome/fontawesome.min.js"></script>
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="lib/bulma/bulma.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+</head>
+<body>
+<div class="bg">
+    <nav class="navbar navbar-brand is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-start">
+                <img src="src/img/logo.png">
+            </div>
+            <div class="navbar-end">
+                <button class="button modal-open" id="cart-btn" data-target="cart-modal">
+                    <span class="icon is-medium">
+                      <span class="fa-stack fa-sm">
+                        <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </span>
+                    <span id="cart-items-count">0</span>
+                    <span id="cart-items-sum">0 ₽</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="navbar-brand-lower-layer"></div>
+
+    <div class="container content">
+        <div class="products">
+            <div class="columns is-multiline is-3-desktop" id="products">
+                <div class="is-one-quarter column">
+                    <div class="card">
+                        <img class="card-img" src="https://netology-ds-team.github.io/sal-rab-homeworks-sources/img/001.jpg">
+                        <h4 class="card-title">Пицца</h4>
+                        <p class="card-price">500.00 ₽</p>
+                        <button class="button is-primary is-fullwidth add-in-cart"
+                                data-id="1"
+                                data-price="500.00"
+                                data-title="Пицца"
+                        >Добавить в заказ
+                        </button>
+                    </div>
+                </div>
+                <div class="is-one-quarter column">
+                    <div class="card">
+                        <img class="card-img" src="https://netology-ds-team.github.io/sal-rab-homeworks-sources/img/002.jpg">
+                        <h4 class="card-title">Чебурек</h4>
+                        <p class="card-price">120.00 ₽</p>
+                        <button class="button is-primary is-fullwidth add-in-cart"
+                                data-id="2"
+                                data-price="120.00"
+                                data-title="Чебурек"
+                        >Добавить в заказ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="content">
+            Задание по разработке программного обеспечения (Курс "Системный аналитик".)
+            Разработано avsudnichnikov для Нетологии в 2021 году.
+        </div>
+    </footer>
+
+    <div class="modal" id="cart-modal">
+        <div class="modal-background"></div>
+        <button class="modal-close close is-large" aria-label="close"></button>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Ваш заказ</p>
+            </header>
+            <section class="modal-card-body" id="cart-detail">
+                Корзина пуста
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success is-fullwidth close modal-open" data-target="prepare-request">Оформить
+                    заказ
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal" id="prepare-request">
+        <div class="modal-background"></div>
+        <button class="modal-close close is-large" aria-label="close"></button>
+        <div class="modal-card">
+            <section class="modal-card-body">
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" id="field-name" placeholder="Ваше имя"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" id="field-address-street" placeholder="Улица"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" id="field-address-house" placeholder="Дом"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" id="field-address-entrance" placeholder="Подъезд"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" id="field-address-floor" placeholder="Этаж"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" id="field-address-flat" placeholder="Квартира"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="phone" id="field-phone" placeholder="Ваш номер телефона"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p>Вы оформляете заказ на сумму <span id="request-sum"></span></p>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success is-fullwidth close" id="send-request-btn">Подтвердить заказ</button>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<script src="src/modal.js"></script>
+<script src="src/notification.js"></script>
+<script src="src/readJsonFile.js"></script>
+<script src="src/phone.js"></script>
+<script src="src/Cart.js"></script>
+<script src="src/createProductCards.js"></script>
+<script src="src/script.js"></script>
+
+<script src="task_1/solution.js"></script>
+<script src="task_2/solution.js"></script>
+<script src="task_3/solution.js"></script>
+<script src="task_4/solution.js"></script>
+<script src="task_final/solution.js"></script>
+
+</body>
+</html>
